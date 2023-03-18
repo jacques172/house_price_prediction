@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House_prediction</title>
+</head>
+<body>
+    <style>
+        
+        </style>
+    {% load widget_tweaks %}
+    <div style="text-align: center;">
+        <form method="post" style=" display: flex;
+        flex-direction: column;
+        align-items: center;">
+            {% csrf_token %}
+                {{ form }}
+                <button type="submit">House Price</button>
+        </form>
+    </div>
+    
+    {% if predicted_price %}
+    
+    <h1 style="color:brown">The predicted price for this house is {{ predicted_price|floatformat:2  }} $</p>
+    {% endif %}
+
+</body>
+
+    
+</html>
+
