@@ -5,4 +5,6 @@
 - Dealt with missing data
 - Trained the model using the LGBM regressor framework based on trees
 - Developed a website using Django that calls the model api to predict a house price based on the values of its features
-other technologies used: Numpy, Pandas, sklearn
+
+
+Other technologies used: Numpy, Pandas, sklearn
