@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form method="post">
+    {% csrf_token %}
+    
+    
+<div class="grid-container" style = "display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+  "> 
+<div>
+  <label for="MSSubClass">MSSubClass:</label>
+  <input type="checkbox" id="MSSubClassCheckbox" name="features" value="MSSubClass" onchange="toggleInputField('MSSubClass')">
+  <input type="number" id="MSSubClass" name="MSSubClass" value="{{ request.POST.MSSubClass }}" required style="display:none;" style="display:none;">
+</div>
+<div>
+  <label for="MSZoning">MSZoning:</label>
+  <input type="checkbox" id="MSZoningCheckbox" name="features" value="MSZoning" onchange="toggleInputField('MSZoning')">
+  <input type="number" id="MSZoning" name="MSZoning" value="{{ request.POST.MSZoning }}" required style="display:none;" style="display:none;">
+</div>
+<div>
+  <label for="LotFrontage">LotFrontage:</label>
+  <input type="checkbox" id="LotFrontageCheckbox" name="features" value="LotFrontage"  onchange="toggleInputField('LotFrontage')">
+  <input type="number" id="LotFrontage" name="LotFrontage" value="{{ request.POST.LotFrontage }}" required style="display:none;" style="display:none;">
+</div>
+<div>
+<label for="LotArea">LotArea:</label>
+<input type="checkbox" id="LotAreaCheckbox" name="features" value="LotArea" onchange="toggleInputField('LotArea')">
+<input type="number" id="LotArea" name="LotArea" value="{{ request.POST.LotArea }}" required style="display:none;" style="display:none;">
+</div>
+<div>
+      <label for="Street">Street:</label>
+      <input type="checkbox" id="StreetCheckbox" name="features" value="Street" onchange="toggleInputField('Street')">
+      <input type="number" id="Street" name="Street" value="{{ request.POST.Street }}" required style="display:none;">  
+    </div>
+<div>
+      <label for="LotShape">LotShape:</label>
+       <input type="checkbox" id="LotShapeCheckbox" name="features" value="LotShape" onchange="toggleInputField('LotShape')">
+      <input type="number" id="LotShape" name="LotShape" value="{{ request.POST.LotShape }}" required style="display:none;">
+</div>
+<div>
+      <label for="LandContour">LandContour:</label>
+      <input type="checkbox" id="LandContourCheckbox" name="features" value="LandContour" onchange="toggleInputField('LandContour')">
+      <input type="number" id="LandContour" name="LandContour" value="{{ request.POST.LandContour }}" required style="display:none;">
+  </div>
+<div>
+  <label for="LotConfig">LotConfig:</label>
+  <input type="checkbox" id="LotConfigCheckbox" name="features" value="LotConfig" onchange="toggleInputField('LotConfig')">
+  <input type="number" id="LotConfig" name="LotConfig" value="{{ request.POST.LotConfig }}" required style="display:none;">
+  </div>
+<div>
+      <label for="LandSlope">LandSlope:</label>
+      <input type="checkbox" id="LandSlopeCheckbox" name="features" value="LandSlope" onchange="toggleInputField('LandSlope')">
+      <input type="number" id="LandSlope" name="LandSlope" value="{{ request.POST.LandSlope }}" required style="display:none;">
+  </div>
+<div>
+      <label for="Neighborhood">Neighborhood:</label>
+      <input type="checkbox" id="NeighborhoodCheckbox" name="features" value="Neighborhood" onchange="toggleInputField('Neighborhood')">
+      <input type="number" id="Neighborhood" name="Neighborhood" value="{{ request.POST.Neighborhood }}" required style="display:none;">
+  </div>
+<div>
+  <label for="Condition1">Condition1:</label>
+   <input type="checkbox" id="Condition1Checkbox" name="features" value="Condition1" onchange="toggleInputField('Condition1')"> 
+  <input type="number" id="Condition1" name="Condition1" value="{{ request.POST.Condition1 }}" required style="display:none;">
+  </div>
+<div>
+  <label for="Condition2">Condition2:</label>
+   <input type="checkbox" id="Condition2Checkbox" name="features" value="Condition2" onchange="toggleInputField('Condition2')">
+  <input type="number" id="Condition2" name="Condition2" value="{{ request.POST.Condition2 }}" required style="display:none;">
+</div>
+<div>
+  <label for="BldgType">BldgType:</label>
+   <input type="checkbox" id="BldgTypeCheckbox" name="features" value="BldgType" onchange="toggleInputField('BldgType')">
+  <input type="number" id="BldgType" name="BldgType" value="{{ request.POST.BldgType }}" required style="display:none;">
+</div>
+<div>
+  <label for="HouseStyle">HouseStyle:</label>
+   <input type="checkbox" id="HouseStyleCheckbox" name="features" value="HouseStyle" onchange="toggleInputField('HouseStyle')">
+  <input type="number" id="HouseStyle" name="HouseStyle" value="{{ request.POST.HouseStyle }}" required style="display:none;">
+</div>
+  <div>
+    <label for="OverallQual">OverallQual:</label>
+     <input type="checkbox" id="OverallQualCheckbox" name="features" value="OverallQual" onchange="toggleInputField('OverallQual')">
+    <input type="number" id="OverallQual" name="OverallQual" value="{{ request.POST.OverallQual }}" required style="display:none;">
+  </div>
+  <div>
+  <label for="OverallCond">OverallCond:</label>
+   <input type="checkbox" id="OverallCondCheckbox" name="features" value="OverallCond" onchange="toggleInputField('OverallCond')">
+  <input type="number" id="OverallCond" name="OverallCond" value="{{ request.POST.OverallCond }}" required style="display:none;">
+  </div>
+<div>
+  <label for="YearBuilt">YearBuilt:</label>
+   <input type="checkbox" id="YearBuiltCheckbox" name="features" value="YearBuilt" onchange="toggleInputField('YearBuilt')">
+  <input type="number" id="YearBuilt" name="YearBuilt" value="{{ request.POST.YearBuilt }}" required style="display:none;">
+  </div>
+<div>
+  <label for="YearRemodAdd">YearRemodAdd:</label>
+   <input type="checkbox" id="YearRemodAddCheckbox" name="features" value="YearRemodAdd" onchange="toggleInputField('YearRemodAdd')">
+  <input type="number" id="YearRemodAdd" name="YearRemodAdd" value="{{ request.POST.YearRemodAdd }}" required style="display:none;">
+  </div>
+<div>
+  <label for="RoofStyle">RoofStyle:</label>
+   <input type="checkbox" id="RoofStyleCheckbox" name="features" value="RoofStyle" onchange="toggleInputField('RoofStyle')">
+  <input type="number" id="RoofStyle" name="RoofStyle" value="{{ request.POST.RoofStyle }}" required style="display:none;">
+  </div>
+<div>
+  <label for="RoofMatl">RoofMatl:</label>
+   <input type="checkbox" id="RoofMatlCheckbox" name="features" value="RoofMatl" onchange="toggleInputField('RoofMatl')">
+  <input type="number" id="RoofMatl" name="RoofMatl" value="{{ request.POST.RoofMatl }}" required style="display:none;">
+  </div>
+<div>
+  <label for="Exterior1st">Exterior1st:</label>
+   <input type="checkbox" id="Exterior1stCheckbox" name="features" value="Exterior1st" onchange="toggleInputField('Exterior1st')">
+  <input type="number" id="Exterior1st" name="Exterior1st" value="{{ request.POST.Exterior1st }}" required style="display:none;">
+  </div>
+<div>
+  <label for="Exterior2nd">Exterior2nd:</label>
+   <input type="checkbox" id="Exterior2ndCheckbox" name="features" value="Exterior2nd" onchange="toggleInputField('Exterior2nd')">
+  <input type="number" id="Exterior2nd" name="Exterior2nd" value="{{ request.POST.Exterior2nd }}" required style="display:none;">
+  </div>
+<div>
+  <label for="MasVnrType">MasVnrType:</label>
+   <input type="checkbox" id="MasVnrTypeCheckbox" name="features" value="MasVnrType" onchange="toggleInputField('MasVnrType')">
+  <input type="number" id="MasVnrType" name="MasVnrType" value="{{ request.POST.MasVnrType }}" required style="display:none;">
+  </div>
+<div>
+  <label for="MasVnrArea">MasVnrArea:</label>
+   <input type="checkbox" id="MasVnrAreaCheckbox" name="features" value="MasVnrArea" onchange="toggleInputField('MasVnrArea')">
+  <input type="number" id="MasVnrArea" name="MasVnrArea" value="{{ request.POST.MasVnrArea }}" required style="display:none;">
+  </div>
+<div>
+  <label for="ExterQual">ExterQual:</label>
+   <input type="checkbox" id="ExterQualCheckbox" name="features" value="ExterQual" onchange="toggleInputField('ExterQual')">
+  <input type="number" id="ExterQual" name="ExterQual" value="{{ request.POST.ExterQual }}" required style="display:none;">
+  </div>
+<div>
+  <label for="ExterCond">ExterCond:</label>
+   <input type="checkbox" id="ExterCondCheckbox" name="features" value="ExterCond" onchange="toggleInputField('ExterCond')">
+  <input type="number" id="ExterCond" name="ExterCond" value="{{ request.POST.ExterCond }}" required style="display:none;">
+  </div>
+<div>
+<label for="Foundation">Foundation:</label>
+   <input type="checkbox" id="FoundationCheckbox" name="features" value="Foundation" onchange="toggleInputField('Foundation')">
+<input type="number" id="Foundation" name="Foundation" value="{{ request.POST.Foundation }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtQual">BsmtQual:</label>
+<input type="checkbox" id="BsmtQualCheckbox" name="features" value="BsmtQual" onchange="toggleInputField('BsmtQual')">
+<input type="number" id="BsmtQual" name="BsmtQual" value="{{ request.POST.BsmtQual }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtCond">BsmtCond:</label>
+<input type="checkbox" id="BsmtCondCheckbox" name="features" value="BsmtCond" onchange="toggleInputField('BsmtCond')">
+<input type="number" id="BsmtCond" name="BsmtCond" value="{{ request.POST.BsmtCond }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtExposure">BsmtExposure:</label>
+<input type="checkbox" id="BsmtExposureCheckbox" name="features" value="BsmtExposure" onchange="toggleInputField('BsmtExposure')">
+<input type="number" id="BsmtExposure" name="BsmtExposure" value="{{ request.POST.BsmtExposure }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtFinType1">BsmtFinType1:</label>
+<input type="checkbox" id="BsmtFinType1Checkbox" name="features" value="BsmtFinType1" onchange="toggleInputField('BsmtFinType1')">
+<input type="number" id="BsmtFinType1" name="BsmtFinType1" value="{{ request.POST.BsmtFinType1 }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtFinSF1">BsmtFinSF1:</label>
+<input type="checkbox" id="BsmtFinSF1Checkbox" name="features" value="BsmtFinSF1" onchange="toggleInputField('BsmtFinSF1')">
+<input type="number" id="BsmtFinSF1" name="BsmtFinSF1" value="{{ request.POST.BsmtFinSF1 }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtFinType2">BsmtFinType2:</label>
+<input type="checkbox" id="BsmtFinType2Checkbox" name="features" value="BsmtFinType2" onchange="toggleInputField('BsmtFinType2')">
+<input type="number" id="BsmtFinType2" name="BsmtFinType2" value="{{ request.POST.BsmtFinType2 }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtFinSF2">BsmtFinSF2:</label>
+<input type="checkbox" id="BsmtFinSF2Checkbox" name="features" value="BsmtFinSF2" onchange="toggleInputField('BsmtFinSF2')">
+<input type="number" id="BsmtFinSF2" name="BsmtFinSF2" value="{{ request.POST.BsmtFinSF2 }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtUnfSF">BsmtUnfSF:</label>
+<input type="checkbox" id="BsmtUnfSFCheckbox" name="features" value="BsmtUnfSF" onchange="toggleInputField('BsmtUnfSF')">
+<input type="number" id="BsmtUnfSF" name="BsmtUnfSF" value="{{ request.POST.BsmtUnfSF }}" required style="display:none;">
+</div>
+<div>
+<label for="TotalBsmtSF">TotalBsmtSF:</label>
+<input type="checkbox" id="TotalBsmtSFCheckbox" name="features" value="TotalBsmtSF" onchange="toggleInputField('TotalBsmtSF')">
+<input type="number" id="TotalBsmtSF" name="TotalBsmtSF" value="{{ request.POST.TotalBsmtSF }}" required style="display:none;">
+</div>
+<div>
+<label for="Heating">Heating:</label>
+<input type="checkbox" id="HeatingCheckbox" name="features" value="Heating" onchange="toggleInputField('Heating')">
+<input type="number" id="Heating" name="Heating" value="{{ request.POST.Heating }}" required style="display:none;">
+</div>
+<div>
+<label for="HeatingQC">Heating Quality&Condition:</label>
+<input type="checkbox" id="HeatingQCCheckbox" name="features" value="HeatingQC" onchange="toggleInputField('HeatingQC')">
+<input type="number" id="HeatingQC" name="HeatingQC" value="{{ request.POST.HeatingQC }}" required style="display:none;">
+</div>
+<div>
+<label for="CentralAir">Central Air Conditioning:</label>
+<input type="checkbox" id="CentralAirCheckbox" name="features" value="CentralAir" onchange="toggleInputField('CentralAir')">
+<input type="number" id="CentralAir" name="CentralAir" value="{{ request.POST.CentralAir }}" required style="display:none;">
+</div>
+<div>
+<label for="Electrical">Electrical System:</label>
+<input type="checkbox" id="ElectricalCheckbox" name="features" value="Electrical" onchange="toggleInputField('Electrical')">
+<input type="number" id="Electrical" name="Electrical" value="{{ request.POST.Electrical }}" required style="display:none;">
+</div>
+<div>
+<label for="FirstFlrSF">First Floor Square Feet:</label>
+<input type="checkbox" id="FirstFlrSFCheckbox" name="features" value="FirstFlrSF" onchange="toggleInputField('FirstFlrSF')">
+<input type="number" id="FirstFlrSF" name="FirstFlrSF" value="{{ request.POST.FirstFlrSF }}" required style="display:none;">
+</div>
+<div>
+<label for="SecondFlrSF">Second Floor Square Feet:</label>
+<input type="checkbox" id="SecondFlrSFCheckbox" name="features" value="SecondFlrSF" onchange="toggleInputField('SecondFlrSF')">
+<input type="number" id="SecondFlrSF" name="SecondFlrSF" value="{{ request.POST.SecondFlrSF }}" required style="display:none;">
+</div>
+<div>
+<label for="LowQualFinSF">LowQualFinSF:</label>
+<input type="checkbox" id="LowQualFinSFCheckbox" name="features" value="LowQualFinSF" onchange="toggleInputField('LowQualFinSF')">
+<input type="number" id="LowQualFinSF" name="LowQualFinSF" value="{{ request.POST.LowQualFinSF }}" required style="display:none;">
+</div>
+<div>
+
+<label for="GrLivArea">GrLivArea</label>
+<input type="checkbox" id="GrLivAreaCheckbox" name="features" value="GrLivArea" onchange="toggleInputField('GrLivArea')">
+<input type="number" id="GrLivArea" name="GrLivArea" value="{{ request.POST.GrLivArea }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtFullBath">Basement Full Bathrooms:</label>
+<input type="checkbox" id="BsmtFullBathCheckbox" name="features" value="BsmtFullBath" onchange="toggleInputField('BsmtFullBath')">
+<input type="number" id="BsmtFullBath" name="BsmtFullBath" value="{{ request.POST.BsmtFullBath }}" required style="display:none;">
+</div>
+<div>
+<label for="BsmtHalfBath">Basement Half Bathrooms:</label>
+<input type="checkbox" id="BsmtHalfBathCheckbox" name="features" value="BsmtHalfBath" onchange="toggleInputField('BsmtHalfBath')">
+<input type="number" id="BsmtHalfBath" name="BsmtHalfBath" value="{{ request.POST.BsmtHalfBath }}" required style="display:none;">
+</div>
+
+<div>
+<label for="FullBath">FullBath:</label>
+<input type="checkbox" id="FullBathCheckbox" name="features" value="FullBath" onchange="toggleInputField('FullBath')">
+<input type="number" id="FullBath" name="FullBath" value="{{ request.POST.FullBath }}" required style="display:none;">
+</div>
+<div>
+<label for="HalfBath">HalfBath:</label>
+<input type="checkbox" id="HalfBathCheckbox" name="features" value="HalfBath" onchange="toggleInputField('HalfBath')">
+<input type="number" id="HalfBath" name="HalfBath" value="{{ request.POST.HalfBath }}" required style="display:none;">
+</div>
+<div>
+<label for="BedroomAbvGr">Bedrooms Above Grade:</label>
+<input type="checkbox" id="BedroomAbvGrCheckbox" name="features" value="BedroomAbvGr" onchange="toggleInputField('BedroomAbvGr')">
+<input type="number" id="BedroomAbvGr" name="BedroomAbvGr" value="{{ request.POST.BedroomAbvGr }}" required style="display:none;">
+</div>
+<div>
+<label for="KitchenAbvGr">KitchenAbvGr:</label>
+<input type="checkbox" id="KitchenAbvGrCheckbox" name="features" value="KitchenAbvGr" onchange="toggleInputField('KitchenAbvGr')">
+<input type="number" id="KitchenAbvGr" name="KitchenAbvGr" value="{{ request.POST.KitchenAbvGr }}" required style="display:none;">
+</div>
+<div>
+<label for="KitchenQual">KitchenQual:</label>
+<input type="checkbox" id="KitchenQualCheckbox" name="features" value="KitchenQual" onchange="toggleInputField('KitchenQual')">
+<input type="number" id="KitchenQual" name="KitchenQual" value="{{ input_features.KitchenQual }}" required style="display:none;">
+</div>
+<div>
+<label for="TotRmsAbvGrd">TotRmsAbvGrd:</label>
+<input type="checkbox" id="TotRmsAbvGrdCheckbox" name="features" value="TotRmsAbvGrd" onchange="toggleInputField('TotRmsAbvGrd')">
+<input type="number" id="TotRmsAbvGrd" name="TotRmsAbvGrd" value="{{ input_features.TotRmsAbvGrd }}" required style="display:none;">
+</div>
+<div>
+<label for="Functional">Functional:</label>
+<input type="checkbox" id="FunctionalCheckbox" name="features" value="Functional" onchange="toggleInputField('Functional')">
+<input type="number" id="Functional" name="Functional" value="{{ input_features.Functional }}" required style="display:none;">
+</div>
+<div>
+<label for="Fireplaces">Fireplaces:</label>
+<input type="checkbox" id="FireplacesCheckbox" name="features" value="Fireplaces" onchange="toggleInputField('Fireplaces')">
+<input type="number" id="Fireplaces" name="Fireplaces" value="{{ input_features.Fireplaces }}" required style="display:none;">
+</div>
+<div>
+<label for="GarageType">GarageType:</label>
+<input type="checkbox" id="GarageTypeCheckbox" name="features" value="GarageType" onchange="toggleInputField('GarageType')">
+<input type="number" id="GarageType" name="GarageType" value="{{ input_features.GarageType }}" required style="display:none;">
+</div>
+<div>
+<label for="GarageYrBlt">GarageYrBlt:</label>
+<input type="checkbox" id="GarageYrBltCheckbox" name="features" value="GarageYrBlt" onchange="toggleInputField('GarageYrBlt')">
+<input type="number" id="GarageYrBlt" name="GarageYrBlt" value="{{ input_features.GarageYrBlt }}" required style="display:none;">
+</div>
+<div>
+<label for="GarageFinish">GarageFinish:</label>
+<input type="checkbox" id="GarageFinishCheckbox" name="features" value="GarageFinish" onchange="toggleInputField('GarageFinish')">
+<input type="number" id="GarageFinish" name="GarageFinish" value="{{ input_features.GarageFinish }}" required style="display:none;">
+</div>
+<div>
+<label for="GarageCars">GarageCars:</label>
+<input type="checkbox" id="GarageCarsCheckbox" name="features" value="GarageCars" onchange="toggleInputField('GarageCars')">
+<input type="number" id="GarageCars" name="GarageCars" value="{{ input_features.GarageCars }}" required style="display:none;">
+</div>
+<div>
+<label for="GarageArea">GarageArea:</label>
+<input type="checkbox" id="GarageAreaCheckbox" name="features" value="GarageArea" onchange="toggleInputField('GarageArea')">
+<input type="number" id="GarageArea" name="GarageArea" value="{{ input_features.GarageArea }}" required style="display:none;">
+</div>
+<div>
+<label for="GarageQual">GarageQual:</label>
+<input type="checkbox" id="GarageQualCheckbox" name="features" value="GarageQual" onchange="toggleInputField('GarageQual')">
+<input type="number" id="GarageQual" name="GarageQual" value="{{ input_features.GarageQual }}" required style="display:none;">
+</div>
+<div>
+<label for="GarageCond">GarageCond:</label>
+<input type="checkbox" id="GarageCondCheckbox" name="features" value="GarageCond" onchange="toggleInputField('GarageCond')">
+<input type="number" id="GarageCond" name="GarageCond" value="{{ input_features.GarageCond }}" required style="display:none;">
+</div>
+<div>
+<label for="PavedDrive">PavedDrive:</label>
+<input type="checkbox" id="PavedDriveCheckbox" name="features" value="PavedDrive" onchange="toggleInputField('PavedDrive')">
+<input type="number" id="PavedDrive" name="PavedDrive" value="{{ input_features.PavedDrive }}" required style="display:none;">
+</div>
+<div>
+<label for="WoodDeckSF">WoodDeckSF:</label>
+<input type="checkbox" id="WoodDeckSFCheckbox" name="features" value="WoodDeckSF" onchange="toggleInputField('WoodDeckSF')">
+<input type="number" id="WoodDeckSF" name="WoodDeckSF" value="{{ input_features.WoodDeckSF }}" required style="display:none;">
+</div>
+<div>
+<label for="OpenPorchSF">OpenPorchSF:</label>
+<input type="checkbox" id="OpenPorchSFCheckbox" name="features" value="OpenPorchSF" onchange="toggleInputField('OpenPorchSF')">
+<input type="number" id="OpenPorchSF" name="OpenPorchSF" value="{{ request.POST.OpenPorchSF }}" required style="display:none;">
+</div>
+<div>
+<label for="EnclosedPorch">EnclosedPorch:</label>
+<input type="checkbox" id="EnclosedPorchCheckbox" name="features" value="EnclosedPorch" onchange="toggleInputField('EnclosedPorch')">
+<input type="number" id="EnclosedPorch" name="EnclosedPorch" value="{{ request.POST.EnclosedPorch }}" required style="display:none;">
+</div>
+<div>
+<label for="ThirdSsnPorch">ThirdSsnPorch:</label>
+<input type="checkbox" id="ThirdSsnPorchCheckbox" name="features" value="ThirdSsnPorch" onchange="toggleInputField('ThirdSsnPorch')">
+<input type="number" id="ThirdSsnPorch" name="ThirdSsnPorch" value="{{ request.POST.ThirdSsnPorch }}" required style="display:none;">
+</div>
+<div>
+<label for="ScreenPorch">ScreenPorch:</label>
+<input type="checkbox" id="ScreenPorchCheckbox" name="features" value="ScreenPorch" onchange="toggleInputField('ScreenPorch')">
+<input type="number" id="ScreenPorch" name="ScreenPorch" value="{{ request.POST.ScreenPorch }}" required style="display:none;">
+</div>
+<div>
+<label for="PoolArea">PoolArea:</label>
+<input type="checkbox" id="PoolAreaCheckbox" name="features" value="PoolArea" onchange="toggleInputField('PoolArea')">
+<input type="number" id="PoolArea" name="PoolArea" value="{{ request.POST.PoolArea }}" required style="display:none;">
+</div>
+<div>
+<label for="MiscVal">MiscVal:</label>
+<input type="checkbox" id="MiscValCheckbox" name="features" value="MiscVal" onchange="toggleInputField('MiscVal')">
+<input type="number" id="MiscVal" name="MiscVal" value="{{ request.POST.MiscVal }}" required style="display:none;">
+</div>
+<div>
+<label for="MoSold">MoSold:</label>
+<input type="checkbox" id="MoSoldCheckbox" name="features" value="MoSold" onchange="toggleInputField('MoSold')">
+<input type="number" id="MoSold" name="MoSold" value="{{ request.POST.MoSold }}" required style="display:none;">
+</div>
+<div>
+<label for="YrSold">YrSold:</label>
+<input type="checkbox" id="YrSoldCheckbox" name="features" value="YrSold" onchange="toggleInputField('YrSold')">
+<input type="number" id="YrSold" name="YrSold" value="{{ request.POST.YrSold }}" required style="display:none;">
+</div>
+<div>
+<label for="SaleType">SaleType:</label>
+<input type="checkbox" id="SaleTypeCheckbox" name="features" value="SaleType" onchange="toggleInputField('SaleType')">
+<input type="number" id="SaleType" name="SaleType" value="{{ request.POST.SaleType }}" required style="display:none;">
+</div>
+<div>
+<label for="SaleCondition">SaleCondition:</label>
+<input type="checkbox" id="SaleConditionCheckbox" name="features" value="SaleCondition" onchange="toggleInputField('SaleCondition')">
+<input type="number" id="SaleCondition" name="SaleCondition" value="{{ request.POST.SaleCondition }}" required style="display:none;">
+</div>
+</div>
+    <button type="submit" style="display: block; /* Make it a block element */
+    margin: 0 auto;">Predict House Price</button>
+</form>
+  {% if predicted_price %}
+    <h2>The predicted price for this house is {{ predicted_price|floatformat:2 }} $</h2>
+  {% endif %}
+  <script>
+    function toggleInputField(featureName) {
+      var checkbox = document.getElementById(featureName + 'Checkbox');
+      var inputField = document.getElementById(featureName);
+      if (checkbox.checked == true) {
+        inputField.style.display = 'block';
+      } else {
+        inputField.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
