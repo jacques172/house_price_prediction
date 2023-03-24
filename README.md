@@ -3,4 +3,4 @@
 - Implemented a KNN imputer technique to fill in missing feature values
 - Users can select which features to provide information about, and the model combines the known and imputed features to make a prediction
 
-technologies used: Numpy, Pandas
+technologies used: Numpy, Pandas, Sklearn
