@@ -1,10 +1,6 @@
-# house_price_prediction
+- Developed a web application using Django to predict house prices based on user input
+- Utilized a dataset from Kaggle to train the model using LGBM regressor with 73 features
+- Implemented a KNN imputer technique to fill in missing feature values
+- Users can select which features to provide information about, and the model combines the known and imputed features to make a prediction
 
-- Use machine learning to predict the sales price of houses
-- Collected the dataset from kaggle website to train the model which has 73 features
-- Dealt with missing data
-- Trained the model using the LGBM regressor framework based on trees
-- Developed a website using Django that calls the model api to predict a house price based on the values of its features
-
-
-Other technologies used: Numpy, Pandas, sklearn
+technologies used: Numpy, Pandas
